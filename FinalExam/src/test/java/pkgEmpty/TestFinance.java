@@ -10,15 +10,15 @@ public class TestFinance {
 	@Test 
 	public void TestAmounts()
 	{
-		double dMonthsToWork = 40 * 12;
-		double rAnnualReturnWorking = 0.07 / 12;
-		double dMonthsRetired = 20 * 12;
-		double rAnnaulReturnRetired = 0.02 / 12;
-		double dRequiredIncome = 10000;
-		double dMonthlySSI = 2642;
-		double pv = FinanceLib.pv(rAnnaulReturnRetired, dMonthsRetired, dRequiredIncome - dMonthlySSI, 0, false);
+		double MonthsToWork = 40 * 12;
+		double workingReturn = 0.07 / 12;
+		double MonthsRetired = 20 * 12;
+		double retiredReturn = 0.02 / 12;
+		double Income = 10000;
+		double MonthSSI = 2642;
+		double pv = FinanceLib.pv(retiredReturn, MonthsRetired, Income - MonthSSI, 0, false);
 		
-		double pmt = FinanceLib.pmt(rAnnualReturnWorking, dMonthsToWork, 0, pv, false);
+		double pmt = FinanceLib.pmt(workingReturn, MonthsToWork, 0, pv, false);
 		
 		System.out.println(pv);
 		System.out.println(pmt);
