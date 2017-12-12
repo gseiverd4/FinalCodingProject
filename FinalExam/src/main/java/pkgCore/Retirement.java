@@ -73,14 +73,14 @@ public class Retirement {
 	public double savingsNeeded()
 	{
 		DecimalFormat decimal = new DecimalFormat("0.0");
-		return (-1)*Double.parseDouble(decimal.format(FinanceLib.pmt
+		return Double.parseDouble(decimal.format(FinanceLib.pmt
 				(workingReturn/100/12, workYears*12, 0, this.totalSavings(), false)));
 	}
 	
 	public double totalSavings()
 	{
 		DecimalFormat decimal = new DecimalFormat("0.0");
-		return (-1)*Double.parseDouble(decimal.format(FinanceLib.pv
+		return Double.parseDouble(decimal.format(FinanceLib.pv
 				(retiredReturn/100/12, yearsRetired*12.0, (Income - MonthSSI), 0.0, false)));
 	}
 }

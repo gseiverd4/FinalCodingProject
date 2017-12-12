@@ -66,22 +66,29 @@ public class RetirementController implements Initializable {
 	public void btnCalculate(ActionEvent event) {
 		
 		if(isInputValid()) {
-			Retirement retirement = new Retirement(
-				(int) Integer.valueOf(workYears.getText()),
-				(double) Double.valueOf(workingReturn.getText()),
-				(int) Integer.valueOf(yearsRetired.getText()),
-				(double) Double.valueOf(retiredReturn.getText()),
-				(double) Double.valueOf(Income.getText()), 
-				(double) Double.valueOf(MonthSSI.getText()));
+			int yearsWorking = (Integer.parseInt(workYears.getText()));
+			
+			double returnWorking = (Double.parseDouble(workingReturn.getText()));
+			
+			int retiredYears = (Integer.parseInt(yearsRetired.getText()));
+			
+			double returnRetired = (Double.parseDouble(retiredReturn.getText()));
+			
+			double income = (Double.parseDouble(Income.getText()));
+			
+			double SSImonth = (Double.parseDouble(MonthSSI.getText()));
+			
+			Retirement r = new Retirement(yearsWorking,returnWorking,retiredYears,returnRetired,income,SSImonth);
+			
 		
-				totalSavings.setText(Double.toString(retirement.totalSavings()));
-				savingsNeeded.setText(Double.toString(retirement.savingsNeeded()));
+				totalSavings.setText(Double.toString(r.totalSavings()));
+				savingsNeeded.setText(Double.toString(r.savingsNeeded()));
 			}
 	}
 		
 
 	private boolean isInputValid() {
-        String errorMessage = "error";
+        String errorMessage = "";
         
         //for years worked
         if (workYears.getText() == null || workYears.getText().length() == 0) {
@@ -160,12 +167,14 @@ public class RetirementController implements Initializable {
         if (errorMessage.length() == 0) {
             return true;
         } else {
-            Alert a = new Alert(AlertType.ERROR);
-            a.setTitle("There are invalid inputs");
-            a.setHeaderText("Fix invalid inputs");
-            a.setContentText(errorMessage);
-            a.showAndWait();
+            Alert alert = new Alert(AlertType.ERROR);
+            alert.setTitle("There are invalid inputs");
+            alert.setHeaderText("Fix invalid inputs");
+            alert.setContentText(errorMessage);
+            
+            alert.showAndWait();
             
             return false;
         }
-        
+        }
+        }
