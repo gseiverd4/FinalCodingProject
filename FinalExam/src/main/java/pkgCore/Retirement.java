@@ -70,14 +70,14 @@ public class Retirement {
 	public double savingsNeeded()
 	{
 		
-		double presentValue = FinanceLib.pmt(workingReturn/100.0/12.0, workYears*12.0, this.totalSavings(), 0.0, false);
-		double pMt = FinanceLib.pmt((workingReturn / 100) / 12, workYears * 12, 0, presentValue, false)* 100 / 100;
+		double presentValue = FinanceLib.pmt(workingReturn/100/12, workYears*12, this.totalSavings(), 0, false);
+		double pMt = FinanceLib.pmt((workingReturn/100)/12, workYears*12, 0, presentValue, false)*100/100;
 		return pMt;
 	}
 	
 	public double totalSavings()
 	{
-		double presentValue = FinanceLib.pv(retiredReturn /100/12, yearsRetired *12, (Income - MonthSSI), 0, false);
+		double presentValue = FinanceLib.pv(retiredReturn/100/12, yearsRetired*12, (Income-MonthSSI), 0, false);
 		return presentValue;
 	}
 }
