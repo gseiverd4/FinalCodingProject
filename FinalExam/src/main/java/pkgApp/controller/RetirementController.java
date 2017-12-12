@@ -105,67 +105,70 @@ public class RetirementController implements Initializable {
         
         //for retired years
         if (yearsRetired.getText() == null || yearsRetired.getText().length() == 0) {
-            errorMessage += "Invalid entry for years retired!\n"; 
+            errorMessage += "Invalid entry (years retired)\n"; 
         } else {
         
-        try {
-            Integer.parseInt(yearsRetired.getText());
-        } catch (NumberFormatException e) {
-            errorMessage += "Invalid integer(years retired)\n"; 
+        		try {
+        			Integer.parseInt(yearsRetired.getText());
+        		} catch (NumberFormatException e) {
+        			errorMessage += "Invalid integer(years retired)\n"; 
         }
         }
         
         //for annual working return
         if (workingReturn.getText() == null || workingReturn.getText().length() == 0) {
-            errorMessage += "Invalid entry for working return!\n"; 
+            errorMessage += "Invalid entry(working return)\n"; 
         } else {
         
-        try {
-            if(Double.parseDouble(workingReturn.getText())<0 || Double.parseDouble(workingReturn.getText())>.2) {
-            	errorMessage += "Integer but be between 0-.2(working return)\n";
-            }
-            
-        } catch (NumberFormatException e) {
-            errorMessage += "Invalid integer(working return)\n"; 
+	        try {
+	            if(Double.parseDouble(workingReturn.getText())<0 || 
+	            		Double.parseDouble(workingReturn.getText())>.2) {
+	            	errorMessage += "Integer but be between 0-.2(working return)\n";
+	            }
+	            
+	        } catch (NumberFormatException e) {
+	            errorMessage += "Invalid integer(working return)\n"; 
         }
         }
         
         //for annual retired return
         if (retiredReturn.getText() == null || retiredReturn.getText().length() == 0) {
-            errorMessage += "Invalid entry for retired return!\n"; 
+            errorMessage += "Invalid entry(retired return)\n"; 
         } else {
         
-        try {
-        	if(Double.parseDouble(retiredReturn.getText())<0 || Double.parseDouble(retiredReturn.getText())>.03) {
-            	errorMessage += "Inetger must be between 0-.3(retired return)\n";
-            }
-        } catch (NumberFormatException e) {
-            errorMessage += "Invalid integer(retired return)\n"; 
+	        try {
+	        	if(Double.parseDouble(retiredReturn.getText())<0 || 
+	        			Double.parseDouble(retiredReturn.getText())>.03) {
+	            	
+	        		errorMessage += "Inetger must be between 0-.3(retired return)\n";
+	            }
+	        } catch (NumberFormatException e) {
+	            errorMessage += "Invalid integer(retired return)\n"; 
         }
         }
         
         //for required income
         if (Income.getText() == null || Income.getText().length() == 0) {
-            errorMessage += "Invalid entry for income!\n"; 
+            errorMessage += "Invalid entry(income)\n"; 
         } else {
         
-        try {
-            Double.parseDouble(Income.getText());
-        } catch (NumberFormatException e) {
-            errorMessage += "Invalid integer(income)\n"; 
+	        try {
+	            Double.parseDouble(Income.getText());
+	        } catch (NumberFormatException e) {
+	            errorMessage += "Invalid integer(income)\n"; 
         }
         }
         
         //for monthly Social Security
         if (MonthSSI.getText() == null || MonthSSI.getText().length() == 0) {
-            errorMessage += "Invalid entry for monthly SSI!\n"; 
+            errorMessage += "Invalid entry(monthly SSI)\n"; 
         } else {
         
-        try {
-            Double.parseDouble(MonthSSI.getText());
-        }
-         catch (NumberFormatException e) {
-            errorMessage += "Invalid integer(monthSSI)\n"; 
+	        try {
+	            Double.parseDouble(MonthSSI.getText());
+	        }
+	         catch (NumberFormatException e) {
+	            errorMessage += "Invalid integer(monthSSI)\n"; 
         }
         }
         
