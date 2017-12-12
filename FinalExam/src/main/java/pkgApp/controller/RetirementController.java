@@ -113,6 +113,7 @@ public class RetirementController implements Initializable {
         } catch (NumberFormatException e) {
             errorMessage += "Invalid integer(years retired)\n"; 
         }
+        }
         
         //for annual working return
         if (workingReturn.getText() == null || workingReturn.getText().length() == 0) {
@@ -127,6 +128,7 @@ public class RetirementController implements Initializable {
         } catch (NumberFormatException e) {
             errorMessage += "Invalid integer(working return)\n"; 
         }
+        }
         
         //for annual retired return
         if (retiredReturn.getText() == null || retiredReturn.getText().length() == 0) {
@@ -140,6 +142,7 @@ public class RetirementController implements Initializable {
         } catch (NumberFormatException e) {
             errorMessage += "Invalid integer(retired return)\n"; 
         }
+        }
         
         //for required income
         if (Income.getText() == null || Income.getText().length() == 0) {
@@ -150,6 +153,7 @@ public class RetirementController implements Initializable {
             Double.parseDouble(Income.getText());
         } catch (NumberFormatException e) {
             errorMessage += "Invalid integer(income)\n"; 
+        }
         }
         
         //for monthly Social Security
@@ -162,6 +166,7 @@ public class RetirementController implements Initializable {
         }
          catch (NumberFormatException e) {
             errorMessage += "Invalid integer(monthSSI)\n"; 
+        }
         }
         
         //test
@@ -177,5 +182,5 @@ public class RetirementController implements Initializable {
             
             return false;
         }
-        }
-        }
+	}
+}
