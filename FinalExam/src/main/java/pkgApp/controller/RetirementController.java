@@ -78,7 +78,8 @@ public class RetirementController implements Initializable {
 			
 			double SSImonth = (Double.parseDouble(MonthSSI.getText()));
 			
-			Retirement r = new Retirement(yearsWorking,returnWorking,retiredYears,returnRetired,income,SSImonth);
+			Retirement r = new Retirement(yearsWorking,returnWorking,retiredYears,
+					returnRetired,income,SSImonth);
 			
 		
 				totalSavings.setText(Double.toString(r.totalSavings()));
@@ -140,7 +141,7 @@ public class RetirementController implements Initializable {
             errorMessage += "Invalid integer(retired return)\n"; 
         }
         
-        //for regular income
+        //for required income
         if (Income.getText() == null || Income.getText().length() == 0) {
             errorMessage += "Invalid entry for income!\n"; 
         } else {
