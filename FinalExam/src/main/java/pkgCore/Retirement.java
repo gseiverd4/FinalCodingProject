@@ -1,7 +1,4 @@
 package pkgCore;
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
-
 import org.apache.poi.ss.formula.functions.FinanceLib;
 
 public class Retirement {
