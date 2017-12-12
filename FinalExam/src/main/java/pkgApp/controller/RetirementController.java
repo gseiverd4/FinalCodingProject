@@ -52,14 +52,14 @@ public class RetirementController implements Initializable {
 	public void btnClear(ActionEvent event) {
 		System.out.println("Clear pressed");
 		
-		workYears.setText("");
-		workingReturn.setText("");
-		yearsRetired.setText("");
-		retiredReturn.setText("");
-		Income.setText("");
-		MonthSSI.setText("");
-		totalSavings.setText("");
-		savingsNeeded.setText("");
+		workYears.clear();
+		workingReturn.clear();
+		yearsRetired.clear();
+		retiredReturn.clear();
+		Income.clear();
+		MonthSSI.clear();
+		totalSavings.clear();
+		savingsNeeded.clear();
 	}
 	
 	@FXML
