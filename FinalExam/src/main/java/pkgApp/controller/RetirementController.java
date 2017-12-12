@@ -92,15 +92,13 @@ public class RetirementController implements Initializable {
         String errorMessage = "";
         
         //for years worked
-        if (workYears.getText() == null || workYears.getText().length() == 0) {
-            errorMessage += "Invalid # of years.\n"; 
-        } else {
-        
         		try {
         			Integer.parseInt(workYears.getText());
         		} catch (NumberFormatException e) {
         			errorMessage += "Invalid integer(years worked)\n"; 
         }
+        		if (workYears.getText() == null) {
+        			errorMessage += "Must enter an integer";
         }
         
         //for retired years
