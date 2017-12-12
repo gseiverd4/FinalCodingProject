@@ -3,6 +3,8 @@ import org.apache.poi.ss.formula.functions.FinanceLib;
 
 public class Retirement {
 
+	//changed some variables for organization
+	
 	private int workYears;
 	private double workingReturn;
 	private int yearsRetired;
@@ -10,7 +12,8 @@ public class Retirement {
 	private double Income;
 	private double MonthSSI;
 	
-	public Retirement(int workYears, double workingReturn, int yearsRetired, double retiredReturn, double Income, double MonthSSI) {
+	public Retirement(int workYears, double workingReturn, int yearsRetired,
+			double retiredReturn, double Income, double MonthSSI) {
 
 		this.setworkYears(workYears);
 		this.setretiredReturn(retiredReturn);
@@ -66,6 +69,8 @@ public class Retirement {
 	public void setMonthSSI(double MonthSSI) {
 		this.MonthSSI = MonthSSI;
 	}
+	
+	//forgot to add in pMt to be sure savingsNeeded() wasn't same value at totalSavings()
 	
 	public double savingsNeeded()
 	{
